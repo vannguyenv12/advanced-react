@@ -1,4 +1,4 @@
-import ScreenMemo from './3.memoization/before/screen';
+import ScreenMemo from './3.memoization/after/screen';
 
 function App() {
   return (
