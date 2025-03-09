@@ -1,19 +1,24 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 function ScreenV2() {
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);
 
-  const fetchData = useCallback(() => {
+  const fetchData = () => {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, [count]);
+  };
+
+  // const fetchDataCallback = useCallback(fetchData, []);
+  const fetchDataMemo = useMemo(() => {
+    return fetchData;
+  }, []);
 
   useEffect(() => {
     console.log('Run Effect');
-    fetchData();
-  }, [fetchData]);
+    fetchDataMemo();
+  }, [fetchDataMemo]);
 
   return (
     <div>
