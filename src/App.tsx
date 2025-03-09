@@ -1,9 +1,9 @@
-import ScreenProps from './1.2-rerender/after/screenProps';
+import ScreenMemo from './3.memoization/before/screen';
 
 function App() {
   return (
     <>
-      <ScreenProps />
+      <ScreenMemo />
     </>
   );
 }
