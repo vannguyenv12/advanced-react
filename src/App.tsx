@@ -1,4 +1,4 @@
-import Screen from './1-rerender/after';
+import Screen from './1.2-rerender/before/screen';
 
 function App() {
   return (
