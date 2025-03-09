@@ -1,9 +1,9 @@
-import Screen from './1.2-rerender/before/screen';
+import ScreenProps from './1.2-rerender/after/screenProps';
 
 function App() {
   return (
     <>
-      <Screen />
+      <ScreenProps />
     </>
   );
 }
