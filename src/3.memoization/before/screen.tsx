@@ -1,10 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
-
-const DisplayNumber = ({ count }: { count: number }) => {
-  console.log('DisplayNumber re-render');
-  return <h2>Count: {count}</h2>;
-};
+import DisplayNumber from './components/DisplayNumber';
 
 function ScreenMemo() {
   const [count, setCount] = useState(0);
