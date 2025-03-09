@@ -32,6 +32,7 @@ function Screen({ content }: { content: React.JSX.Element }) {
         onClick={handleOpen}
       >
         {content}
+        {/* Reference ELEMENT => NOT CREATE ELEMENT */}
       </div>
 
       <Modal
