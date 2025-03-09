@@ -15,7 +15,7 @@ const style = {
   p: 4,
 };
 
-function Screen({ content }: { content: React.JSX.Element }) {
+function Screen({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -31,7 +31,7 @@ function Screen({ content }: { content: React.JSX.Element }) {
         }}
         onClick={handleOpen}
       >
-        {content}
+        {children}
         {/* Reference ELEMENT => NOT CREATE ELEMENT */}
       </div>
 

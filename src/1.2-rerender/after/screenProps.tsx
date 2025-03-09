@@ -3,14 +3,12 @@ import HeavyComponent from './components/HeavyComponent';
 import { Typography } from '@mui/material';
 
 function ScreenProps() {
-  const content = (
-    <>
+  return (
+    <Screen>
       <HeavyComponent />
       <Typography>Hello There</Typography>
-    </>
+    </Screen>
   );
-
-  return <Screen content={content} />;
 }
 
 export default ScreenProps;
