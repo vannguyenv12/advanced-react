@@ -1,5 +1,11 @@
+import Screen from './1-rerender/after';
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Screen />
+    </>
+  );
 }
 
 export default App;
