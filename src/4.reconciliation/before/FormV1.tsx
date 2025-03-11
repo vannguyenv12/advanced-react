@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styles from './style.module.css';
 
-function FormV1() {
-  const [isText, setIsText] = useState(false);
+function FormV2() {
+  const [isPhone, setIsPhone] = useState(false);
 
   return (
     <div className={styles.container}>
@@ -10,21 +10,21 @@ function FormV1() {
         <label className={styles.label}>
           <input
             type='radio'
-            checked={!isText}
-            onChange={() => setIsText(false)}
+            checked={!isPhone}
+            onChange={() => setIsPhone(false)}
           />
           Text
         </label>
         <label className={styles.label}>
           <input
             type='radio'
-            checked={isText}
-            onChange={() => setIsText(true)}
+            checked={isPhone}
+            onChange={() => setIsPhone(true)}
           />
           Phone
         </label>
 
-        {isText ? (
+        {isPhone ? (
           <input type='text' placeholder='Phone...' className={styles.input} />
         ) : (
           <textarea placeholder='Enter your text'></textarea>
@@ -40,4 +40,4 @@ function FormV1() {
   );
 }
 
-export default FormV1;
+export default FormV2;
