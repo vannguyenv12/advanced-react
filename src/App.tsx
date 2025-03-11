@@ -1,9 +1,9 @@
-import ScreenMemo from './3.memoization/after/screen';
+import FormV1 from './4.reconciliation/before/FormV1';
 
 function App() {
   return (
     <>
-      <ScreenMemo />
+      <FormV1 />
     </>
   );
 }
