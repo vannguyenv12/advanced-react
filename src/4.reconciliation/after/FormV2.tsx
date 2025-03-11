@@ -25,14 +25,14 @@ function FormV2() {
           Phone
         </label>
 
-        {/* {isPhone ? (
-          <Input placeholder='Phone...' />
+        {isPhone ? (
+          <Input placeholder='Phone...' key='phone' />
         ) : (
-          <Input placeholder='Email...' />
-        )} */}
+          <Input placeholder='Email...' key='email' />
+        )}
 
-        {isPhone ? <Input placeholder='Phone...' /> : null}
-        {!isPhone ? <Input placeholder='Email...' /> : null}
+        {/* {isPhone ? <Input placeholder='Phone...' /> : null}
+        {!isPhone ? <Input placeholder='Email...' /> : null} */}
 
         <input
           type='password'
@@ -58,6 +58,13 @@ function FormV2() {
 //   { type: 'input' }, // 2 email
 //   null, // 3
 //   { type: 'input' }, // password
+// ];
+
+// const formV2 = [
+//   { type: 'label' },
+//   { type: 'label' },
+//   { type: 'input', key: 'phone' },
+//   { type: 'input' },
 // ];
 
 // const formV2 = {
