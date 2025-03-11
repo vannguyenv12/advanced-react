@@ -13,7 +13,7 @@ function FormV1() {
             checked={!isText}
             onChange={() => setIsText(false)}
           />
-          Email
+          Text
         </label>
         <label className={styles.label}>
           <input
@@ -21,7 +21,7 @@ function FormV1() {
             checked={isText}
             onChange={() => setIsText(true)}
           />
-          Text
+          Phone
         </label>
 
         {isText ? (
