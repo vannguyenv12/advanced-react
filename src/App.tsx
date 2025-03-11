@@ -1,9 +1,9 @@
-import ScreenV3 from './3.memoization/after/screenv3';
+import ScreenMemo from './3.memoization/after/screen';
 
 function App() {
   return (
     <>
-      <ScreenV3 />
+      <ScreenMemo />
     </>
   );
 }
