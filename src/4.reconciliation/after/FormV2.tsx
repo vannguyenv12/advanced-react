@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './style.module.css';
+import Input from './components/Input';
 
 function FormV2() {
   const [isPhone, setIsPhone] = useState(false);
@@ -25,9 +26,9 @@ function FormV2() {
         </label>
 
         {isPhone ? (
-          <input type='text' placeholder='Phone...' className={styles.input} />
+          <Input placeholder='Phone...' />
         ) : (
-          <input type='text' placeholder='Email...' className={styles.input} />
+          <Input placeholder='Email...' />
         )}
 
         <input
