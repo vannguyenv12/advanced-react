@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './style.module.css';
 
-function FormV1() {
+function FormV2() {
   const [isPhone, setIsPhone] = useState(false);
 
   return (
@@ -13,7 +13,7 @@ function FormV1() {
             checked={!isPhone}
             onChange={() => setIsPhone(false)}
           />
-          Text
+          Email
         </label>
         <label className={styles.label}>
           <input
@@ -27,7 +27,7 @@ function FormV1() {
         {isPhone ? (
           <input type='text' placeholder='Phone...' className={styles.input} />
         ) : (
-          <textarea placeholder='Enter your text'></textarea>
+          <input type='text' placeholder='Email...' className={styles.input} />
         )}
 
         <input
@@ -40,4 +40,4 @@ function FormV1() {
   );
 }
 
-export default FormV1;
+export default FormV2;
