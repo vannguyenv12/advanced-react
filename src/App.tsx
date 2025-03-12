@@ -1,9 +1,9 @@
-import FormV2 from './4.reconciliation/after/FormV2';
+import Section5 from './5.hoc/after/Section5';
 
 function App() {
   return (
     <>
-      <FormV2 />
+      <Section5 />
     </>
   );
 }
