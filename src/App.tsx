@@ -1,9 +1,9 @@
-import Section5 from './5.hoc/after/Section5';
+import Section5List from './5.hoc/after/Section5List';
 
 function App() {
   return (
     <>
-      <Section5 />
+      <Section5List />
     </>
   );
 }
