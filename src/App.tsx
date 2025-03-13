@@ -1,9 +1,9 @@
-import Section5Log from './5.hoc/after/Section5Log';
+import Section6 from './6.context/before/Section6';
 
 function App() {
   return (
     <>
-      <Section5Log />
+      <Section6 />
     </>
   );
 }
