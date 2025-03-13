@@ -1,4 +1,4 @@
-import Section6 from './6.context/before/Section6';
+import Section6 from './6.context/after/Section6';
 
 function App() {
   return (
