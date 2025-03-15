@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import style from './Form.module.css';
+import MyInput from './MyInput';
 
 function MyForm() {
   const [name, setName] = useState('');
@@ -34,25 +35,21 @@ function MyForm() {
 
   return (
     <form className={style.form}>
-      <label>Name</label>
-      <input
+      <MyInput
         ref={nameInputRef}
-        type='text'
-        placeholder='Enter Your Name...'
+        label='Name'
         value={name}
-        onChange={(e) => setName(e.target.value)}
-        className={isNameError ? style.invalid : ''}
+        handleChange={(e) => setName(e.target.value)}
+        isError={isNameError}
       />
+
       <br />
-      <label>Email</label>
-      <input
-        ref={emailInputRef}
-        id='email'
-        type='text'
-        placeholder='Enter Your Email...'
+      <MyInput
+        myRef={emailInputRef}
+        label='Email'
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className={isEmailError ? style.invalid : ''}
+        handleChange={(e) => setEmail(e.target.value)}
+        isError={isEmailError}
       />
 
       <button type='button' onClick={submit}>

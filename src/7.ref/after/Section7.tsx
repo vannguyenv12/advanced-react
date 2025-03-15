@@ -4,7 +4,6 @@ function Section7() {
   return (
     <>
       <MyForm />
-      <MyForm />
     </>
   );
 }
