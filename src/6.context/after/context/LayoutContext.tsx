@@ -1,4 +1,10 @@
-import { createContext, useContext, useState } from 'react';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
 
 export const LayoutContext = createContext({
   open: false,
@@ -8,10 +14,24 @@ export const LayoutContext = createContext({
 const LayoutProvider = ({ children }: { children: React.ReactNode }) => {
   const [open, setOpen] = useState(false);
 
-  const value = { open, setOpen };
+  const setOpenCb = useCallback(
+    (open: boolean) => {
+      setOpen(open);
+    },
+    [setOpen]
+  );
+
+  const valueMemo = useMemo(() => {
+    return {
+      open,
+      setOpen: setOpenCb,
+    };
+  }, [open, setOpenCb]);
 
   return (
-    <LayoutContext.Provider value={value}>{children}</LayoutContext.Provider>
+    <LayoutContext.Provider value={valueMemo}>
+      {children}
+    </LayoutContext.Provider>
   );
 };
 

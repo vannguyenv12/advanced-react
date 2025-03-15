@@ -42,6 +42,8 @@ const AppBar = styled(MuiAppBar, {
 function Header() {
   const { open, setOpen } = useLayoutContext();
 
+  console.log('Re-render Header');
+
   return (
     <AppBar position='fixed' open={open}>
       <Toolbar>
