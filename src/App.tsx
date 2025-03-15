@@ -1,4 +1,4 @@
-import Section8 from './8.race-condition/before/Section8';
+import Section8 from './8.race-condition/after/Section8';
 
 function App() {
   return (
