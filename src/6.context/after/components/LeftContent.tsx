@@ -1,8 +1,8 @@
-interface ILeftContentProps {
-  open: boolean;
-}
+import { useLayoutContext } from '../context/LayoutContext';
 
-function LeftContent({ open }: ILeftContentProps) {
+function LeftContent() {
+  const { open } = useLayoutContext();
+
   return <div>Left Content {open ? 'Expand Sidebar' : 'Collapse sidebar'}</div>;
 }
 

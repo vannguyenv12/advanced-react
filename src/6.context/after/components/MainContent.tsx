@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import LeftContent from './LeftContent';
 import RightContent from './RightContent';
 import HeavyComponent from './HeavyComponent';
+import { useLayoutContext } from '../context/LayoutContext';
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -14,11 +15,9 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
-interface IMainContentProps {
-  open: boolean;
-}
+function MainContent() {
+  console.log('Re-render MainContent');
 
-function MainContent({ open }: IMainContentProps) {
   return (
     <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
       <DrawerHeader />
@@ -42,7 +41,7 @@ function MainContent({ open }: IMainContentProps) {
 
       {/* What we care */}
       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <LeftContent open={open} />
+        <LeftContent />
         <RightContent />
       </Box>
     </Box>

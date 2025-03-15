@@ -10,6 +10,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { CSSObject, styled, Theme } from '@mui/material/styles';
+import { useLayoutContext } from '../context/LayoutContext';
 
 const drawerWidth = 240;
 
@@ -68,12 +69,9 @@ const Drawer = styled(MuiDrawer, {
   ],
 }));
 
-interface IHeaderProps {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-}
+export default function Sidebar() {
+  const { open, setOpen } = useLayoutContext();
 
-export default function Sidebar({ open, setOpen }: IHeaderProps) {
   return (
     <Drawer variant='permanent' open={open}>
       <DrawerHeader>

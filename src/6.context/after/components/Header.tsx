@@ -7,6 +7,8 @@ import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { useContext } from 'react';
+import { LayoutContext, useLayoutContext } from '../context/LayoutContext';
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
@@ -37,12 +39,9 @@ const AppBar = styled(MuiAppBar, {
   ],
 }));
 
-interface IHeaderProps {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-}
+function Header() {
+  const { open, setOpen } = useLayoutContext();
 
-function Header({ open, setOpen }: IHeaderProps) {
   return (
     <AppBar position='fixed' open={open}>
       <Toolbar>
