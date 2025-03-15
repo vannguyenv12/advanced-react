@@ -1,9 +1,9 @@
-import Section7 from './7.ref/after/Section7';
+import Section8 from './8.race-condition/before/Section8';
 
 function App() {
   return (
     <>
-      <Section7 />
+      <Section8 />
     </>
   );
 }
