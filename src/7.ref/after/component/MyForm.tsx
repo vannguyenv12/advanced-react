@@ -3,25 +3,57 @@ import style from './Form.module.css';
 
 function MyForm() {
   const [name, setName] = useState('');
-  const lengthRef = useRef(0);
+  const [email, setEmail] = useState('');
+
+  const [isNameError, setIsNameError] = useState(false);
+  const [isEmailError, setIsEmailError] = useState(false);
+
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
 
   const submit = () => {
-    lengthRef.current = name.length;
+    setIsNameError(false);
+    setIsEmailError(false);
+
+    if (!name) {
+      setIsNameError(true);
+      // document.getElementById('name')?.focus();
+      nameInputRef.current?.focus();
+      return;
+    }
+
+    if (!email) {
+      setIsEmailError(true);
+      // document.getElementById('email')?.focus();
+      emailInputRef.current?.focus();
+      return;
+    }
+
+    console.log('Successfully');
   };
 
   return (
     <form className={style.form}>
-      <label>Length of Name: {lengthRef.current}</label>
       <label>Name</label>
       <input
+        ref={nameInputRef}
         type='text'
         placeholder='Enter Your Name...'
         value={name}
         onChange={(e) => setName(e.target.value)}
+        className={isNameError ? style.invalid : ''}
       />
       <br />
       <label>Email</label>
-      <input type='text' placeholder='Enter Your Email...' />
+      <input
+        ref={emailInputRef}
+        id='email'
+        type='text'
+        placeholder='Enter Your Email...'
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className={isEmailError ? style.invalid : ''}
+      />
 
       <button type='button' onClick={submit}>
         Submit
