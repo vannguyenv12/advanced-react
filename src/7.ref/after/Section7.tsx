@@ -1,9 +1,9 @@
-import RefExplain from './component/RefExplain';
+import MyForm from './component/MyForm';
 
 function Section7() {
   return (
     <>
-      <RefExplain />
+      <MyForm />
     </>
   );
 }
