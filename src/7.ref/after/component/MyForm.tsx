@@ -2,6 +2,11 @@ import { useRef, useState } from 'react';
 import style from './Form.module.css';
 import MyInput from './MyInput';
 
+interface IRefPower {
+  focus: () => void;
+  errorAnimate: () => void;
+}
+
 function MyForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -9,8 +14,8 @@ function MyForm() {
   const [isNameError, setIsNameError] = useState(false);
   const [isEmailError, setIsEmailError] = useState(false);
 
-  const nameInputRef = useRef<HTMLInputElement>(null);
-  const emailInputRef = useRef<HTMLInputElement>(null);
+  const nameInputRef = useRef<IRefPower>(null);
+  const emailInputRef = useRef<IRefPower>(null);
 
   const submit = () => {
     setIsNameError(false);
@@ -18,15 +23,15 @@ function MyForm() {
 
     if (!name) {
       setIsNameError(true);
-      // document.getElementById('name')?.focus();
       nameInputRef.current?.focus();
+      nameInputRef.current?.errorAnimate();
       return;
     }
 
     if (!email) {
       setIsEmailError(true);
-      // document.getElementById('email')?.focus();
       emailInputRef.current?.focus();
+      emailInputRef.current?.errorAnimate();
       return;
     }
 
@@ -45,7 +50,7 @@ function MyForm() {
 
       <br />
       <MyInput
-        myRef={emailInputRef}
+        ref={emailInputRef}
         label='Email'
         value={email}
         handleChange={(e) => setEmail(e.target.value)}
