@@ -1,9 +1,9 @@
-import Form from './components/Form';
+import Counter3 from './components/Counter3';
 
 function Section0() {
   return (
     <div>
-      <Form />
+      <Counter3 />
     </div>
   );
 }

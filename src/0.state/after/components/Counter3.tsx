@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+// INITIAL RENDER => number = 0
 export default function Counter3() {
   const [number, setNumber] = useState(0);
 
@@ -10,7 +11,7 @@ export default function Counter3() {
         onClick={() => {
           setNumber(number + 5);
           setTimeout(() => {
-            alert(number);
+            console.log(number);
           }, 3000);
         }}
       >
