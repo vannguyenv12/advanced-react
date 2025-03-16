@@ -1,9 +1,9 @@
-import Counter3 from './components/Counter3';
+import Counter from './components/Counter';
 
 function Section0() {
   return (
     <div>
-      <Counter3 />
+      <Counter />
     </div>
   );
 }
