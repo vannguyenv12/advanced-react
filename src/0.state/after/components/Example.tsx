@@ -10,7 +10,6 @@ function Example() {
   });
   const [name, setName] = useState('');
   const [gmail, setGmail] = useState('');
-  const [hotmail, setHotmail] = useState('');
 
   const handleClick = () => {};
 
@@ -32,13 +31,6 @@ function Example() {
           placeholder='Change your gmail...'
           value={gmail}
           onChange={(e) => setGmail(e.target.value)}
-        />
-        <br />
-        <label>Hot Mail</label>
-        <input
-          placeholder='Change your hot mail...'
-          value={hotmail}
-          onChange={(e) => setHotmail(e.target.value)}
         />
         <br />
         <button type='button' onClick={handleClick}>
