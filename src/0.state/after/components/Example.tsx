@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { produce } from 'immer';
+import { useImmer } from 'use-immer';
 
 function Example() {
-  const [info, setInfo] = useState({
+  const [info, setInfo] = useImmer({
     name: 'John',
     additional: {
       gmail: 'john@gmail.com',
@@ -11,7 +13,19 @@ function Example() {
   const [name, setName] = useState('');
   const [gmail, setGmail] = useState('');
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    // const newInfo = {
+    //   ...info,
+    //   name,
+    //   additional: { ...info.additional, gmail },
+    // }; // shallow copy
+    // setInfo(newInfo);
+
+    setInfo((draftState) => {
+      draftState.name = name;
+      draftState.additional.gmail = gmail;
+    });
+  };
 
   return (
     <div>

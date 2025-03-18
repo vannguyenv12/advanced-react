@@ -1,9 +1,9 @@
-import Example from './components/Example';
+import Example2 from './components/Example2';
 
 function Section0() {
   return (
     <div>
-      <Example />
+      <Example2 />
     </div>
   );
 }
